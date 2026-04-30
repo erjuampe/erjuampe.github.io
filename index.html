@@ -1,10 +1,410 @@
 <!DOCTYPE html>
-<html lang="es">
+
+<html class="dark" lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Hola Mundo</title>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>Humo con Solera</title>
+        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+                rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&amp;display=swap"
+                rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+                rel="stylesheet" />
+        <script id="tailwind-config">tailwind.config = {
+                        darkMode: "class",
+                        theme: {
+                                extend: {
+                                        "colors": {
+                                                "on-tertiary": "#31302f",
+                                                "surface-container-lowest": "#0e0e0e",
+                                                "on-tertiary-container": "#2a2a29",
+                                                "inverse-primary": "#f5a661",
+                                                "inverse-on-surface": "#313030",
+                                                "primary-fixed": "#ffdcc3",
+                                                "surface-container-low": "#1c1b1b",
+                                                "primary": "#f5a661",
+                                                "primary-container": "#c26f2a",
+                                                "secondary-fixed": "#ffdad7",
+                                                "inverse-surface": "#e5e2e1",
+                                                "on-tertiary-fixed-variant": "#474745",
+                                                "on-secondary-fixed": "#410004",
+                                                "on-surface-variant": "#dbc2b0",
+                                                "tertiary-fixed": "#e5e2e0",
+                                                "on-primary": "#462100",
+                                                "secondary": "#ffb3ad",
+                                                "tertiary": "#c9c6c4",
+                                                "on-primary-fixed-variant": "#6e3900",
+                                                "background": "#131313",
+                                                "on-error": "#690005",
+                                                "secondary-container": "#882423",
+                                                "tertiary-container": "#92908f",
+                                                "outline": "#a38c7c",
+                                                "on-secondary-container": "#ff9e97",
+                                                "surface-variant": "#353534",
+                                                "surface-container-highest": "#353534",
+                                                "error-container": "#93000a",
+                                                "on-secondary-fixed-variant": "#852221",
+                                                "on-background": "#e5e2e1",
+                                                "on-secondary": "#65080d",
+                                                "primary-fixed-dim": "#f5a661",
+                                                "outline-variant": "#554336",
+                                                "surface-bright": "#3a3939",
+                                                "tertiary-fixed-dim": "#c9c6c4",
+                                                "surface": "#131313",
+                                                "error": "#ffb4ab",
+                                                "on-tertiary-fixed": "#1c1c1b",
+                                                "surface-dim": "#131313",
+                                                "on-error-container": "#ffdad6",
+                                                "surface-container-high": "#2a2a2a",
+                                                "on-primary-container": "#ffdbc0",
+                                                "surface-container": "#201f1f",
+                                                "secondary-fixed-dim": "#ffb3ad",
+                                                "on-surface": "#e5e2e1",
+                                                "on-primary-fixed": "#2f1500",
+                                                "surface-tint": "#f5a661"
+                                        },
+                                        "borderRadius": {
+                                                "DEFAULT": "0.25rem",
+                                                "lg": "0.5rem",
+                                                "xl": "0.75rem",
+                                                "full": "9999px"
+                                        },
+                                        "spacing": {
+                                                "section-padding": "120px",
+                                                "container-max": "1200px",
+                                                "unit": "8px",
+                                                "gutter": "32px"
+                                        },
+                                        "fontFamily": {
+                                                "headline-lg": [
+                                                        "Noto Serif"
+                                                ],
+                                                "label-sm": [
+                                                        "Noto Serif"
+                                                ],
+                                                "body-lg": [
+                                                        "Noto Serif"
+                                                ],
+                                                "headline-xl": [
+                                                        "Noto Serif"
+                                                ],
+                                                "body-md": [
+                                                        "Noto Serif"
+                                                ],
+                                                "headline-md": [
+                                                        "Noto Serif"
+                                                ]
+                                        },
+                                        "fontSize": {
+                                                "headline-lg": [
+                                                        "40px",
+                                                        {
+                                                                "lineHeight": "1.2",
+                                                                "letterSpacing": "0.02em",
+                                                                "fontWeight": "700"
+                                                        }
+                                                ],
+                                                "label-sm": [
+                                                        "12px",
+                                                        {
+                                                                "lineHeight": "1",
+                                                                "letterSpacing": "0.1em",
+                                                                "fontWeight": "600"
+                                                        }
+                                                ],
+                                                "body-lg": [
+                                                        "18px",
+                                                        {
+                                                                "lineHeight": "1.6",
+                                                                "fontWeight": "400"
+                                                        }
+                                                ],
+                                                "headline-xl": [
+                                                        "64px",
+                                                        {
+                                                                "lineHeight": "1.1",
+                                                                "letterSpacing": "0.05em",
+                                                                "fontWeight": "700"
+                                                        }
+                                                ],
+                                                "body-md": [
+                                                        "16px",
+                                                        {
+                                                                "lineHeight": "1.6",
+                                                                "fontWeight": "400"
+                                                        }
+                                                ],
+                                                "headline-md": [
+                                                        "24px",
+                                                        {
+                                                                "lineHeight": "1.3",
+                                                                "letterSpacing": "0.02em",
+                                                                "fontWeight": "600"
+                                                        }
+                                                ]
+                                        }
+                                },
+                        },
+                }</script>
+        <style>
+                .texture-bg {
+                        background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)" opacity="0.05"/%3E%3C/svg%3E');
+                }
+
+                .burlap-line {
+                        background-image: repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(217, 119, 7, 0.1) 2px, rgba(217, 119, 7, 0.1) 4px);
+                        height: 4px;
+                }
+
+                .benefit-card {
+                        transition: box-shadow 0.4s ease, background-color 0.5s, border-color 0.4s;
+                }
+
+                .benefit-card:hover {
+                        box-shadow: 0 0 24px rgba(245, 166, 97, 0.25), 0 0 6px rgba(245, 166, 97, 0.15);
+                        border-color: rgba(245, 166, 97, 0.4);
+                }
+
+                .sello-container {
+                        position: absolute;
+                        bottom: 0;
+                        left: -110px;
+                        overflow: hidden;
+                        pointer-events: none;
+                        z-index: 10;
+                }
+
+                .sello-img {
+                        width: 600px;
+                        height: 600px;
+                        object-fit: contain;
+                        display: block;
+                        transform: translateY(30%) rotate(10deg);
+                        opacity: 0.25;
+                        filter: invert();
+                }
+                .title{
+                        color:rgb(242 242 242 / 90%) !important;
+                }
+        </style>
 </head>
-<body>
-    <h1>¡Hola Mundo!</h1>
+
+<body
+        class="bg-background text-on-background font-body-md antialiased texture-bg selection:bg-primary-container selection:text-on-primary-container">
+        <!-- TopNavBar -->
+
+        <main>
+                <!-- Hero Section -->
+                <section
+                        class="relative min-h-screen flex items-center justify-center pt-32 pb-section-padding overflow-hidden">
+
+                        <div class="absolute inset-0 z-0">
+                                <div
+                                        class="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background z-10">
+                                </div>
+                                <video autoplay muted loop playsinline
+                                        class="w-full h-full object-cover object-center opacity-80 mix-blend-luminosity">
+                                        <source src="resources/fuego.mp4" type="video/mp4">
+                                </video>
+                        </div>
+
+                        <div class="relative z-20 container mx-auto px-gutter text-center max-w-4xl mt-20">
+                                <h1
+                                        class="title font-headline-xl text-[80px] md:text-[120px] text-primary drop-shadow-[0_4px_30px_rgba(217,119,7,0.6)] mb-8 uppercase tracking-[0.2em] italic leading-none">
+                                        HUMO CON SOLERA</h1>
+                                <div class="w-24 mx-auto burlap-line mb-8"></div>
+                                <p class="font-body-lg text-on-surface-variant max-w-2xl mx-auto italic">
+                                        Duelas centenarias de roble del Marco de Jerez para un ahumado gastronómico
+                                        excepcional.
+                                </p>
+                        </div>
+                </section>
+                <!-- History Section -->
+                <section class="py-section-padding bg-surface" id="history">
+                        <div class="container mx-auto px-gutter max-w-container-max">
+                                <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                                        <div class="lg:col-span-5 relative">
+                                                <div
+                                                        class="aspect-[4/5] bg-surface-container-high relative overflow-hidden group">
+                                                        <div
+                                                                class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10">
+                                                        </div>
+                                                        <img alt="Ancient oak barrels in a dark cellar"
+                                                                class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000"
+                                                                data-alt="A moody, atmospheric photograph of rows of ancient oak barrels aging in a deeply shadowed, traditional Sherry wine cellar. A single shaft of warm, golden light pierces the darkness, illuminating the textured wood grain and iron hoops of a foreground barrel. The air feels heavy and aromatic. The aesthetic is highly textured, rich in contrast, and evokes a sense of deep history and artisanal craftsmanship."
+                                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjpXFx9bpHMJ65nfjE7xSRDyAtogoeJC2jHunC6sCzWTkbpD9ANSigxdLa96VVHfBWkkzQRY61Ljh_y2bg5o0MFiYOykmf4GEDVL6IZ9z3GaIxH3WiNN82yGobKE6ybT62-A492Gc0bK2T0ZRRLdgQDf5mDq3Df2T37yr-TlIZ0xlhkvzcddZ6ux__9B8FKWU19r0F7Jzp99C2sjBBl0WqcuPlfRXa9Do0wJNWdxxF2pDvJAPonSckmMeY9I4h2Imj48IORExvnnOF" />
+                                                        <div class="absolute bottom-8 left-8 z-20">
+                                                                <p
+                                                                        class="font-label-sm text-primary uppercase tracking-widest">
+                                                                        Origen</p>
+                                                                <p class="font-headline-md text-on-surface">Marco de
+                                                                        Jerez</p>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="lg:col-span-7">
+                                                <h2 class="font-headline-lg text-primary mb-6 uppercase tracking-wider">
+                                                        Legado del Marco de Jerez</h2>
+                                                <div class="w-16 burlap-line mb-8"></div>
+                                                <div class="space-y-6 font-body-lg text-on-surface-variant">
+                                                        <p>
+                                                                Nuestro humo no se crea; se hereda. Utilizamos
+                                                                exclusivamente duelas de roble americano que han
+                                                                contenido los vinos más nobles del Marco de Jerez
+                                                                durante décadas.
+                                                        </p>
+                                                        <p>
+                                                                Esta madera, saturada por años de crianza oxidativa y
+                                                                biológica, libera al quemarse una sinfonía de aromas que
+                                                                transforman cualquier asado en un ritual ancestral.
+                                                        </p>
+                                                </div>
+                                                <div class="mt-12 flex gap-4 flex-wrap">
+                                                        <div
+                                                                class="px-6 py-3 border border-outline/30 bg-surface-container/50 font-label-sm text-primary tracking-widest uppercase">
+                                                                100% Roble Americano
+                                                        </div>
+                                                        <div
+                                                                class="px-6 py-3 border border-outline/30 bg-surface-container/50 font-label-sm text-primary tracking-widest uppercase">
+                                                                Crianza Tradicional
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </section>
+                <!-- Benefits Section -->
+                <section class="py-section-padding bg-surface-dim relative overflow-hidden" id="benefits">
+                        <div
+                                class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-container/5 via-background to-background">
+                        </div>
+                        <div class="container mx-auto px-gutter max-w-container-max relative z-10">
+                                <div class="text-center mb-20">
+                                        <h2 class="font-headline-lg text-primary mb-6 uppercase tracking-wider">El
+                                                Ritual del Humo</h2>
+                                        <div class="w-24 mx-auto burlap-line"></div>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                                        <!-- Card 1 -->
+                                        <div
+                                                class="benefit-card bg-surface-container-high/50 p-8 pt-12 border-t border-primary/20 hover:bg-surface-container transition-colors duration-500 group">
+                                                <span class="material-symbols-outlined text-4xl text-primary mb-6"
+                                                        style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+                                                <h3 class="font-headline-md text-on-surface mb-4">Aroma Único</h3>
+                                                <p class="font-body-md text-on-surface-variant">Notas sutiles de frutos
+                                                        secos, vainilla y especias heredadas del vino añejo que impregnó
+                                                        la madera.</p>
+                                        </div>
+                                        <!-- Card 2 -->
+                                        <div
+                                                class="benefit-card bg-surface-container-high/50 p-8 pt-12 border-t border-primary/20 hover:bg-surface-container transition-colors duration-500 group">
+                                                <span class="material-symbols-outlined text-4xl text-primary mb-6"
+                                                        style="font-variation-settings: 'FILL' 1;">restaurant</span>
+                                                <h3 class="font-headline-md text-on-surface mb-4">Sabor Intenso</h3>
+                                                <p class="font-body-md text-on-surface-variant">Un humo denso y dulce
+                                                        que carameliza la superficie de las carnes y pescados, sellando
+                                                        los jugos.</p>
+                                        </div>
+                                        <!-- Card 3 -->
+                                        <div
+                                                class="benefit-card bg-surface-container-high/50 p-8 pt-12 border-t border-primary/20 hover:bg-surface-container transition-colors duration-500 group">
+                                                <span class="material-symbols-outlined text-4xl text-primary mb-6"
+                                                        style="font-variation-settings: 'FILL' 1;">timer</span>
+                                                <h3 class="font-headline-md text-on-surface mb-4">Combustión Lenta</h3>
+                                                <p class="font-body-md text-on-surface-variant">Densidad superior de la
+                                                        madera vieja que garantiza un ahumado prolongado y estable sin
+                                                        llamaradas.</p>
+                                        </div>
+                                </div>
+                        </div>
+                </section>
+                <!-- Contact Section -->
+                <section class="py-section-padding bg-surface border-t border-outline/10" id="contact">
+                        <div class="container mx-auto px-gutter max-w-4xl text-center">
+                                <h2 class="font-headline-lg text-primary mb-6 uppercase tracking-wider">Únete a la
+                                        Tradición</h2>
+                                <p class="font-body-lg text-on-surface-variant mb-12">Eleva tus barbacoas al siguiente nivel con nuestras duelas para ahumar. Trozos de madera listos para usar que transforman cualquier elaboración en una experiencia gourmet.</p>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-16 text-left">
+                                        <div>
+                                                <h3 class="font-headline-md text-on-surface mb-8">Contacto Directo</h3>
+                                                <div class="space-y-6">
+                                                        <div class="flex items-center gap-4 text-on-surface-variant hover:text-primary transition-colors">
+                                                                <span class="material-symbols-outlined text-2xl"
+                                                                        style="font-variation-settings: 'FILL' 1;">call</span>
+                                                                <span class="font-label-sm uppercase tracking-widest">+34
+                                                                        660 783 262 (WhatsApp)</span>
+                                                        </div>
+                                                        <a class="flex items-center gap-4 text-on-surface-variant hover:text-primary transition-colors"
+                                                                href="mailto:pedidos@humoconsolera.com">
+                                                                <span class="material-symbols-outlined text-2xl"
+                                                                        style="font-variation-settings: 'FILL' 1;">mail</span>
+                                                                <span
+                                                                        class="font-label-sm uppercase tracking-widest">pedidos@humoconsolera.com</span>
+                                                        </a>
+                                                </div>
+
+                                        </div>
+                                        <form class="space-y-8">
+                                                <div>
+                                                        <label
+                                                                class="block font-label-sm text-primary uppercase tracking-widest mb-2">Nombre</label>
+                                                        <input class="w-full bg-transparent border-0 border-b border-outline/50 focus:border-primary focus:ring-0 text-on-surface px-0 py-2 font-body-md transition-colors"
+                                                                placeholder="Tu nombre" type="text" />
+                                                </div>
+                                                <div>
+                                                        <label
+                                                                class="block font-label-sm text-primary uppercase tracking-widest mb-2">Email</label>
+                                                        <input class="w-full bg-transparent border-0 border-b border-outline/50 focus:border-primary focus:ring-0 text-on-surface px-0 py-2 font-body-md transition-colors"
+                                                                placeholder="tu@email.com" type="email" />
+                                                </div>
+                                                <div>
+                                                        <label
+                                                                class="block font-label-sm text-primary uppercase tracking-widest mb-2">Mensaje</label>
+                                                        <textarea
+                                                                class="w-full bg-transparent border-0 border-b border-outline/50 focus:border-primary focus:ring-0 text-on-surface px-0 py-2 font-body-md transition-colors resize-none"
+                                                                placeholder="¿En qué podemos ayudarte?"
+                                                                rows="4"></textarea>
+                                                </div>
+                                                <button class="w-full px-8 py-4 bg-primary text-on-primary font-label-sm uppercase tracking-widest hover:bg-primary-container transition-colors texture-bg"
+                                                        type="submit">
+                                                        Enviar Mensaje
+                                                </button>
+                                        </form>
+                                </div>
+                        </div>
+                </section>
+        </main>
+
+        <!-- Sello -->
+        <div style="position: relative;">
+        <div class="sello-container">
+            <img alt="Sello Humo con Solera" class="sello-img" src="resources/logo-removebg.png"/>
+        </div>
+        </div>
+  
+
+        <!-- Footer -->
+        <footer class="w-full py-5 px-10 border-t border-zinc-900 bg-zinc-950">
+                <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+                        <div class="text-lg font-black text-amber-700 italic tracking-tighter">
+                                HUMO CON SOLERA
+                        </div>
+                        <p class="font-noto-serif text-[10px] tracking-widest uppercase text-amber-700 opacity-80">
+                                © MMXXIV HUMO CON SOLERA. THE RITUAL OF FIRE.
+                        </p>
+                        <div class="flex gap-6 font-noto-serif text-[10px] tracking-widest uppercase text-zinc-600">
+                                <a class="hover:text-amber-500 transition-colors opacity-80 hover:opacity-100"
+                                        href="#">Terms of Service</a>
+                                <a class="hover:text-amber-500 transition-colors opacity-80 hover:opacity-100"
+                                        href="#">Privacy Policy</a>
+                                <a class="hover:text-amber-500 transition-colors opacity-80 hover:opacity-100"
+                                        href="#">Heritage Registry</a>
+                        </div>
+                </div>
+        </footer>
 </body>
+
 </html>
