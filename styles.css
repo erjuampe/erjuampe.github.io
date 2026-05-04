@@ -71,3 +71,11 @@ section{
 section#section-contact{
     padding-bottom: 4em;
 }
+
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+    bottom: 0px !important;
+}
+
+.swiper-pagination-bullet-active{
+    background-color: #DE9758 !important;
+}
